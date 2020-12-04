@@ -1,0 +1,52 @@
+name: Sync with Api
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+    fetch-content:
+        if: github.repository == 'aghontpi/mirror-xkcd-api'
+        name: execute python logic
+        runs-on: ubuntu-latest
+        env:
+          new_content: true
+        steps:
+        - uses: actions/checkout@v1
+        - name: install requests pip3
+          run: pip3 install requests
+        - name: run python logic
+          run: python3 ./sync.py
+        - name: status of the new folder
+          run: git status api/ --porcelain
+        - name: add new files
+          run: |
+            git config --local user.name "sync bot"
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add *
+        - name: commit new content
+          id: newfiles
+          run: (awk '{print "added content " substr($3, match($3,"\""), match($3,"}")-1) "."}' syncState.json) | git commit -F -
+          continue-on-error: true
+        - name: not proceed if there is no new files
+          if: steps.newfiles.outcome == 'failure' && env.new_content == 'true'
+          run: |
+            echo "no new content was fetched"
+            echo "new_content=false" >> $GITHUB_ENV
+        - name: push the new content
+          if: env.new_content == 'true'
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.TOKEN }}
+            branch: main
+
+
+# debug
+# on:
+#   push:
+#     branches:
+#       - master
+# on:
+#     schedule:
+#         - cron:  '0 */12 * * *'
