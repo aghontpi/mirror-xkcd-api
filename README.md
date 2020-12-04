@@ -9,13 +9,13 @@ This repository will automatically update with new content everyday.
 ***to consume json for x/your_value***
 
 ```text
-https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/master/api/{x}/info.0.json
+https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/{x}/info.0.json
 ```
 
 ***example: make a request to 190***
 
 ```text
-https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/master/api/190/info.0.json
+https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/190/info.0.json
 ```
 
 ### Making request will give the following response
