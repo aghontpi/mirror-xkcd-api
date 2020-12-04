@@ -2,10 +2,7 @@
 
 > Update-to-date mirror of xkcd api, which Supports CORS.
 
-## Mirror for xkcd
-
 This repository will automatically update with new content everyday.
-
 
 ## How to use
 
