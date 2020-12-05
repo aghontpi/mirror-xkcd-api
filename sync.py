@@ -128,7 +128,7 @@ class Sync(Utils):
     def _compareLocalAndRemote(self):
         l_content_id = int(self.local_content['last_update_content']['id'])
         r_content_id = int(self.remote_content['num'])
-        return not l_content_id <= r_content_id
+        return not l_content_id < r_content_id
 
     def downloadNewContent(self):
         l_content = self.local_content

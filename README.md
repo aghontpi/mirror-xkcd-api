@@ -1,18 +1,18 @@
 # Mirror of xkcd api
 
-> Update-to-date mirror of xkcd api, which Supports CORS.
+> Up-to-date mirror of xkcd api, which Supports CORS.
 
 This repository will automatically update with new content everyday.
 
 ## How to use
 
-***to consume json for x/your_value***
+***to consume comic #x***
 
 ```text
 https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/{x}/info.0.json
 ```
 
-***example: make a request to 190***
+***example: to consume comic #190***
 
 ```text
 https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/190/info.0.json
@@ -45,12 +45,12 @@ You should use, "mirror_img": "https://raw.githubusercontent.com/aghontpi/mirror
 
 
 
-***to get the latest content***
+***to consume latest comic***
 
 
 make a request to 
 
-``text
+```text
 https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/syncState.json
 ```
 
@@ -59,4 +59,4 @@ You will get the following json.
 {"last_update_content": {"id": "2394"}}
 ```
 
-use the value of id, this value will get updated on every new update in xkcd api.
+use the id with previous method.

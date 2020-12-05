@@ -7182,3 +7182,6 @@
 2020-12-05 00:26:15 saving in new directory :  api/2393 
 2020-12-05 00:26:15 downloaded content : 2394 
 2020-12-05 00:26:15 updating syncState {'last_update_content': {'id': '2394'}} 
+2020-12-05 12:09:16 
+******************** 2020-12-05 ********************  
+2020-12-05 12:09:16 processing 2394 
