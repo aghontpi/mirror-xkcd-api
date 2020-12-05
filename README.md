@@ -42,3 +42,21 @@ https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/190/info.0.j
 'img': 'https://imgs.xkcd.com/comics/ipod.png' is the original link, 
 
 You should use, "mirror_img": "https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/api/190/ipod.png"
+
+
+
+***to get the latest content***
+
+
+make a request to 
+
+``text
+https://raw.githubusercontent.com/aghontpi/mirror-xkcd-api/main/syncState.json
+```
+
+You will get the following json.
+```json
+{"last_update_content": {"id": "2394"}}
+```
+
+use the value of id, this value will get updated on every new update in xkcd api.
