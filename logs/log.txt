@@ -11004,3 +11004,6 @@
 2022-05-14 01:06:36 saving in new directory :  api/2618 
 2022-05-14 01:06:36 downloaded content : 2619 
 2022-05-14 01:06:36 updating syncState {'last_update_content': {'id': '2619'}} 
+2022-05-14 12:21:17 
+******************** 2022-05-14 ********************  
+2022-05-14 12:21:17 no new content to sync  
