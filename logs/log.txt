@@ -12330,3 +12330,6 @@
 2022-11-12 01:02:15 saving in new directory :  api/2696 
 2022-11-12 01:02:16 downloaded content : 2697 
 2022-11-12 01:02:16 updating syncState {'last_update_content': {'id': '2697'}} 
+2022-11-12 12:19:49 
+******************** 2022-11-12 ********************  
+2022-11-12 12:19:49 no new content to sync  
