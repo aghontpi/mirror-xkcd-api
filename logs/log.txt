@@ -12939,3 +12939,9 @@
 2023-02-04 00:50:09 
 ******************** 2023-02-04 ********************  
 2023-02-04 00:50:10 no new content to sync  
+2023-02-04 12:16:11 
+******************** 2023-02-04 ********************  
+2023-02-04 12:16:11 processing 2732 
+2023-02-04 12:16:11 saving in new directory :  /home/runner/work/mirror-xkcd-api/mirror-xkcd-api/api/2732 
+2023-02-04 12:16:11 downloaded content : 2733 
+2023-02-04 12:16:11 updating syncState {'last_update_content': {'id': '2733'}} 
