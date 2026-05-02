@@ -134,23 +134,24 @@ class Sync(Utils):
         l_content = self.local_content
         r_content = self.remote_content
         # check local content id vs remote content id
-        self._log("processing", l_content['last_update_content']['id'])
         l_content_id = int(l_content['last_update_content']['id'])
         r_content_id = int(r_content['num'])
-        while l_content_id < r_content_id:
+        start_id = l_content_id + 1
+        self._log("processing from", start_id)
+        while start_id <= r_content_id:
             try:
                 json_content = json.loads(requests.get(
-                    "https://xkcd.com/"+str(l_content_id)+"/info.0.json").content)
+                    "https://xkcd.com/"+str(start_id)+"/info.0.json").content)
             except:
-                self._log('can not contact remote for :', l_content_id)
-                self._log('skipping ', l_content_id)
-                l_content_id += 1
+                self._log('can not contact remote for :', start_id)
+                self._log('skipping ', start_id)
+                start_id += 1
                 continue
             if self._saveContent(json_content):
-                l_content_id += 1
-                l_content['last_update_content']['id'] = str(l_content_id)
-                self._log('downloaded content :', l_content_id)
+                self._log('downloaded content :', start_id)
+                l_content['last_update_content']['id'] = str(start_id)
                 self._saveState(self.local_content)
+                start_id += 1
             else:
                 self._log('error saving content... skipping')
                 break
